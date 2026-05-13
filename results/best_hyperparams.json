@@ -1,0 +1,8 @@
+{
+  "winner": "LDA",
+  "best_params": {
+    "solver": "lsqr",
+    "shrinkage": 0.33127303180847645
+  },
+  "best_cv_auc": 0.9057971014492754
+}
