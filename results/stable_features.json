@@ -1,0 +1,11 @@
+{
+  "stable_features": [
+    "categorical__thal_3.0",
+    "categorical__thal_7.0",
+    "ordinal__ca",
+    "categorical__cp_4.0",
+    "continuous__thalach",
+    "continuous__oldpeak",
+    "binary__exang"
+  ]
+}

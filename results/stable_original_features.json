@@ -1,0 +1,10 @@
+{
+  "stable_original_features": [
+    "ca",
+    "cp",
+    "thal",
+    "thalach",
+    "oldpeak",
+    "exang"
+  ]
+}
