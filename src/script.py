@@ -6,14 +6,12 @@ import warnings
 import numpy as np
 import pandas as pd
 import optuna
-from pathlib import Path
 from typing import List, Dict, Any, Optional, Tuple
 from sklearn.pipeline import Pipeline
 from sklearn.impute import SimpleImputer
-from sklearn.preprocessing import StandardScaler, OrdinalEncoder, OneHotEncoder
+from sklearn.preprocessing import StandardScaler, OneHotEncoder
 from sklearn.compose import ColumnTransformer
 from sklearn.model_selection import StratifiedKFold, cross_val_score
-from sklearn.feature_selection import SelectFromModel
 from sklearn.base import clone, BaseEstimator
 from sklearn.feature_selection import SelectKBest, mutual_info_classif
 from sklearn.metrics import (matthews_corrcoef, roc_auc_score, balanced_accuracy_score,
@@ -173,7 +171,7 @@ class RepeatedNestedCV:
         return clone(clf).set_params(**study.best_params)
         ###################################################################
                
-    def _select_features(self, selector: SelectFromModel, X_train_pp: np.ndarray, y_train: np.ndarray,X_test_pp: np.ndarray,
+    def _select_features(self, selector: SelectKBest, X_train_pp: np.ndarray, y_train: np.ndarray,X_test_pp: np.ndarray,
         feature_names: List[str],) -> Tuple[np.ndarray, np.ndarray, List[str]]:
         selector.fit(X_train_pp, y_train)
         mask = selector.get_support()
